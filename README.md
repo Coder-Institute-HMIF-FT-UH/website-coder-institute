@@ -45,6 +45,74 @@ Lalu akses proyek melalui http://localhost:3000
 
 ---
 
+## 🔴 Ticketing
+
+Project ini menggunakan fitur **GitHub Issues** sebagai sistem _ticketing_ resmi untuk membagi dan melacak tugas di dalam proyek ini.
+
+Setiap tugas (baik membuat komponen, memperbaiki bug, maupun menulis dokumentasi) akan dibuat dalam bentuk **ticket (issue)** dan diberi label, deskripsi, serta assignee yang bertanggung jawab. Juga pada project menggunakan **GitHub Projects** sebagai sistem manajemen tugas visual, mirip seperti Trello. Di dalamnya kamu akan melihat semua _ticket_ (issue) yang dibagi berdasarkan status pengerjaan.
+
+###🏷️ Format Judul GitHub Issue
+
+Untuk memudahkan tracking, diskusi, dan pengelompokan task, gunakan format tag di awal judul **GitHub Issue**.
+
+| Tag          | Kapan Dipakai                         | Contoh Judul Issue                              |
+| ------------ | ------------------------------------- | ----------------------------------------------- |
+| `[Feature]`  | Menambahkan fitur atau komponen baru  | `[Feature] Tambahkan BlogCard di halaman utama` |
+| `[Fix]`      | Perbaikan minor (UI, logic, typo)     | `[Fix] Warna button tidak konsisten`            |
+| `[Bug]`      | Ada error atau fungsi tidak berjalan  | `[Bug] Gambar pengurus tidak tampil di Safari`  |
+| `[Refactor]` | Perapihan kode tanpa ubah fungsional  | `[Refactor] Pisahkan logic API ke utils`        |
+| `[Docs]`     | Dokumentasi (README, komentar, dsb.)  | `[Docs] Tambahkan instruksi setup project`      |
+| `[Chore]`    | Task non-fungsional (config, tooling) | `[Chore] Setup Husky & lint-staged`             |
+
+### 📌 Aturan Tambahan
+
+- Gunakan **bahasa Indonesia yang jelas** untuk judul.
+- Judul issue harus langsung menggambarkan _apa yang ingin dilakukan atau diperbaiki_.
+- Sertakan deskripsi, screenshot (jika UI), dan checklist tugas bila perlu.
+
+---
+
+## ✅ Format Penulisan Commit (Conventional Commits)
+
+Gunakan format commit berikut untuk menjaga histori proyek tetap konsisten dan mudah dipahami:
+
+### 📘 Daftar Tag (type) yang Didukung
+
+| Tag (`type`) | Kapan Dipakai                                      | Contoh Penggunaan                                  |
+| ------------ | -------------------------------------------------- | -------------------------------------------------- |
+| `feat`       | Menambahkan fitur baru atau tampilan baru          | `feat: implementasi halaman detail pengurus`       |
+| `fix`        | Memperbaiki bug atau kesalahan logic               | `fix: perbaiki posisi tombol login di layar kecil` |
+| `style`      | Perubahan terkait format, spasi, perubahan UI, dsb | `style: rapikan indentasi dan hapus baris kosong`  |
+| `refactor`   | Reorganisasi kode tanpa ubah perilaku              | `refactor: pisahkan validasi ke file helper`       |
+| `docs`       | Perubahan dokumentasi saja                         | `docs: update README untuk instruksi deploy`       |
+| `chore`      | Tugas teknis non-fungsional                        | `chore: setup ESLint dan Prettier`                 |
+| `perf`       | Optimasi performa                                  | `perf: optimalkan render daftar projek`            |
+
+### 💡 Tips Tambahan
+
+- Gunakan **bahasa Indonesia** untuk deskripsi agar semua anggota tim paham konteks.
+- **Jangan gunakan huruf kapital di awal deskripsi**.
+- Hindari commit seperti `update`, `edit`, `fix bug`, karena kurang jelas.
+- Commit yang konsisten akan sangat membantu saat review, debug, atau tracking fitur.
+
+### 📌 Format Umum
+
+```
+<type>: <deskripsi singkat yang dilakukan dalam bahasa Indonesia>
+```
+
+Contoh:
+
+```
+feat: tambahkan komponen BlogCard di halaman utama
+fix: perbaiki tampilan navbar di mobile
+refactor: pisahkan fungsi filter ke utils terpisah
+```
+
+Dengan menerapkan ini, projek akan lebih mudah **dimaintain**, **dibaca histori-nya**, dan lebih siap untuk kolaborasi lebih baik lagi! Jika bingung bisa konsultasi ke Gen AI untuk memudahkan pembuatan commit message yang tepat.
+
+---
+
 ## 📁 Struktur Folder
 
 ```bash

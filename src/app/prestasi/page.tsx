@@ -1,21 +1,21 @@
-import PrestasiSection from "@/components/prestasi/PrestasiSection";
-import { Metadata } from "next";
+import PrestasiSection from '@/components/prestasi/PrestasiSection';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Prestasi",
+  title: 'Prestasi',
   description:
-    "Prestasi dan penghargaan yang telah diraih oleh anggota Coder Institute dalam berbagai kompetisi IT dan programming.",
+    'Prestasi dan penghargaan yang telah diraih oleh anggota Coder Institute dalam berbagai kompetisi IT dan programming.',
   keywords: [
-    "prestasi Coder Institute",
-    "kompetisi programming",
-    "hackathon",
-    "lomba IT",
-    "penghargaan mahasiswa",
+    'prestasi Coder Institute',
+    'kompetisi programming',
+    'hackathon',
+    'lomba IT',
+    'penghargaan mahasiswa',
   ],
   openGraph: {
-    title: "Prestasi - Coder Institute",
+    title: 'Prestasi - Coder Institute',
     description:
-      "Prestasi dan penghargaan yang telah diraih oleh anggota Coder Institute dalam berbagai kompetisi IT dan programming.",
+      'Prestasi dan penghargaan yang telah diraih oleh anggota Coder Institute dalam berbagai kompetisi IT dan programming.',
   },
 };
 

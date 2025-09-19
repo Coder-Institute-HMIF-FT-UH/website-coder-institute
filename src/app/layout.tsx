@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
@@ -73,6 +74,19 @@ export default function RootLayout({
         {/* navbar (coming soon) */}
         <main className="container">{children}</main>
         {/* footer (coming soon) */}
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7GQ4YDBC50"
+          strategy="afterInteractive"
+        ></Script>
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7GQ4YDBC50');`}
+        </Script>
       </body>
     </html>
   );

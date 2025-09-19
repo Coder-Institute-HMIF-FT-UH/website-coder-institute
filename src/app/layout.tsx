@@ -71,6 +71,10 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://coder-institute.vercel.app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="D14OGZUUn701dQ1i9rHjPsmGjknD1QNfb3Eg9hAj2J8"
+        />
       </head>
       <body>
         {/* navbar (coming soon) */}

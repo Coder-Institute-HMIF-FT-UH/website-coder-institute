@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: {
@@ -75,7 +76,11 @@ export default function RootLayout({
         {/* navbar (coming soon) */}
         <main className="container">{children}</main>
         {/* footer (coming soon) */}
+
+        {/* vercel */}
         <Analytics />
+        <SpeedInsights />
+
         {/* Google tag (gtag.js) */}
         <Script
           async

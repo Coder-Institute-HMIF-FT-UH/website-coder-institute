@@ -21,8 +21,10 @@ export const metadata: Metadata = {
 
 export default function ProjekPage() {
   return (
-    <div>
-      <ProjekSection />
-    </div>
+    <>
+      <div className="container">
+        <ProjekSection />
+      </div>
+    </>
   );
 }

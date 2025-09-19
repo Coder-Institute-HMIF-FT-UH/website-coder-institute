@@ -10,20 +10,20 @@ const organizationSchema = {
   url: 'https://coder-institute.vercel.app',
   logo: 'https://coder-institute.vercel.app/logo.png',
   sameAs: [
-    'https://instagram.com/coder_institute',
+    'https://www.instagram.com/coderinstitute/',
     'https://github.com/Coder-Institute-HMIF-FT-UH',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'general',
-    email: 'contact@coder-institute.org',
+    email: 'coderinstitute.uh@gmail.com',
   },
   location: {
     '@type': 'Place',
     name: 'Universitas Hasanuddin',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Makassar',
+      addressLocality: 'Gowa',
       addressRegion: 'Sulawesi Selatan',
       addressCountry: 'Indonesia',
     },
@@ -34,9 +34,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema} />
-      <div>
-        <BerandaSection />
-      </div>
+      <BerandaSection />
     </>
   );
 }

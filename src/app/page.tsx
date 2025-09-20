@@ -7,8 +7,8 @@ const organizationSchema = {
   name: 'Coder Institute',
   description:
     'Komunitas mahasiswa Teknik Informatika Universitas Hasanuddin yang aktif di bidang teknologi, coding, dan seminar IT',
-  url: 'https://coder-institute.vercel.app',
-  logo: 'https://coder-institute.vercel.app/logo.png',
+  url: 'https://www.coderinstitute.id',
+  logo: 'https://www.coderinstitute.id/logo.png',
   sameAs: [
     'https://www.instagram.com/coderinstitute/',
     'https://github.com/Coder-Institute-HMIF-FT-UH',

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       //   disallow: "", // for disallowing specific paths (later)
     },
-    sitemap: 'https://coder-institute.vercel.app/sitemap.xml',
+    sitemap: 'https://www.coderinstitute.id/sitemap.xml',
   };
 }

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'id_ID',
-    url: 'https://coder-institute.vercel.app',
+    url: 'https://www.coderinstitute.id',
     title:
       'Coder Institute - Komunitas IT Mahasiswa Teknik Informatika Universitas Hasanuddin',
     description:
@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <head>
-        <link rel="canonical" href="https://coder-institute.vercel.app" />
+        <link rel="canonical" href="https://www.coderinstitute.id" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="google-site-verification"

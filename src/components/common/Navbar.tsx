@@ -18,7 +18,7 @@ const Navbar = () => {
     { label: 'Blog', href: '/blog' },
   ];
 
-  // Auto close when clicking outside
+  // logika untuk menutup menu saat klik di luar area navbar
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -90,7 +90,12 @@ const Navbar = () => {
 
           {/* Bagian Kanan: Kontak (Desktop) + Hamburger (Mobile) */}
           <div className="flex items-center">
-            <Link href="/kontak" className="hidden lg:inline-block">
+            <Link
+              href="https://www.instagram.com/coderinstitute/"
+              className="hidden lg:inline-block"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="cursor-pointer rounded-xl border border-[#FFC343] bg-[#FFC343] px-5 py-2 font-semibold text-[#333333] transition">
                 Kontak Kami
               </button>
@@ -158,7 +163,7 @@ const Navbar = () => {
             );
           })}
           <Link
-            href="/kontak"
+            href="https://www.instagram.com/coderinstitute/"
             className={`w-full rounded-xl border border-[#FFC343] bg-[#FFC343] px-8 py-3 text-center font-semibold text-[#333333] transition-all duration-200 hover:border-[#FFB300] hover:bg-[#FFB300] ${
               isOpen
                 ? 'translate-y-0 scale-100 opacity-100'
@@ -168,6 +173,8 @@ const Navbar = () => {
               transitionDelay: isOpen ? `${navLinks.length * 50}ms` : '0ms',
             }}
             onClick={() => setIsOpen(false)}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Kontak Kami
           </Link>

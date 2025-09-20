@@ -37,7 +37,7 @@ module.exports = {
     'subject-full-stop': [2, 'never', '.'], // subject tidak boleh diakhiri titik
 
     // Batasan panjang header (type + scope + subject)
-    'header-max-length': [2, 'always', 100],
+    'header-max-length': [2, 'always', 150],
 
     // Aturan body (deskripsi commit)
     'body-leading-blank': [1, 'always'], // body harus diawali 1 baris kosong

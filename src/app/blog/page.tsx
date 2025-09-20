@@ -1,5 +1,6 @@
-import BlogSection from '@/components/blog/BlogSection';
 import { Metadata } from 'next';
+
+import BlogSection from '@/components/blog/BlogSection';
 
 export const metadata: Metadata = {
   title: 'Blog',

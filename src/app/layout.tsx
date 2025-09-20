@@ -1,8 +1,10 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { Metadata } from 'next';
+import Script from 'next/script';
+import './globals.css';
+
+import Navbar from '@/components/common/Navbar';
 
 export const metadata: Metadata = {
   title: {
@@ -77,7 +79,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* navbar (coming soon) */}
+        <Navbar />
         <main className="container">{children}</main>
         {/* footer (coming soon) */}
 

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 
+import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 
 export const metadata: Metadata = {
@@ -81,7 +82,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main className="container">{children}</main>
-        {/* footer (coming soon) */}
+        <Footer />
 
         {/* vercel */}
         <Analytics />

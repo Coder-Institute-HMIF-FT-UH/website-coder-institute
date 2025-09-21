@@ -64,13 +64,11 @@ const Footer = () => {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className={`relative pb-1 transition-colors hover:text-[#FFB300] ${
-                        isActive ? 'text-[#FFB300]' : ''
-                      }`}
+                      className="relative pb-1 transition-colors hover:text-[#FFB300]"
                     >
                       {link.label}
                       {isActive && (
-                        <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#FFB300]"></span>
+                        <span className="absolute bottom-0 left-0 h-[3px] w-full rounded-full bg-[#FFB300]"></span>
                       )}
                     </Link>
                   </li>

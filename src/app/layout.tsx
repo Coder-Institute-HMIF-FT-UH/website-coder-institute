@@ -81,7 +81,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <main className="container">{children}</main>
+        <main className="container pt-20 md:pt-0">{children}</main>
         <Footer />
 
         {/* vercel */}

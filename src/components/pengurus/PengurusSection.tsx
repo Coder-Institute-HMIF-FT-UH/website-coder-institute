@@ -1,8 +1,10 @@
+import { UnderConstruction } from '../common/UnderConstruction';
+
 const PengurusSection = () => {
   return (
-    <div>
-      <h1>Pengurus Section</h1>
-    </div>
+    <>
+      <UnderConstruction />
+    </>
   );
 };
 

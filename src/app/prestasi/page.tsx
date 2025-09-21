@@ -1,5 +1,6 @@
-import PrestasiSection from '@/components/prestasi/PrestasiSection';
 import { Metadata } from 'next';
+
+import PrestasiSection from '@/components/prestasi/PrestasiSection';
 
 export const metadata: Metadata = {
   title: 'Prestasi',

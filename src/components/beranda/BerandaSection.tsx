@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const BerandaSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center space-y-5">
+    <div className="flex min-h-screen flex-col items-center justify-center space-y-5 text-center">
       <Image
         src="/logo-coder.png"
         alt="Logo Coder Institute"
@@ -11,7 +11,7 @@ const BerandaSection = () => {
         quality={100}
         priority
       />
-      <h1 className="text-2xl font-bold text-foreground">
+      <h1 className="text-foreground text-2xl font-bold">
         Website Sedang Dalam Proses Pengerjaan 🚧
       </h1>
       <p className="text-gray-600">

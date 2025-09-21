@@ -4,8 +4,12 @@
 :root {
   --background: #fffaf4;
   --foreground: #151515;
-  --container-padding-x: 16px;
+  --container-padding-x: 24px;
   --container-padding-y: 24px;
+}
+
+@theme {
+  --breakpoint-xs: 350px;
 }
 
 /* Definisi token Tailwind (agar bisa dipakai dengan utilitas seperti bg-[customize-name], text-[customize-name], font-[customize-name]) */
@@ -35,6 +39,16 @@ body {
 }
 
 .container {
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+  /* padding-top: var(--container-padding-y);
+  padding-bottom: var(--container-padding-y); */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+
+.footer {
   padding-left: var(--container-padding-x);
   padding-right: var(--container-padding-x);
   /* padding-top: var(--container-padding-y);

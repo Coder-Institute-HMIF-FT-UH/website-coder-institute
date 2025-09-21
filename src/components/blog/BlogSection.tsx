@@ -1,8 +1,10 @@
+import { UnderConstruction } from '../common/UnderConstruction';
+
 const BlogSection = () => {
   return (
-    <div>
-      <h1>Blog Section</h1>
-    </div>
+    <>
+      <UnderConstruction />
+    </>
   );
 };
 

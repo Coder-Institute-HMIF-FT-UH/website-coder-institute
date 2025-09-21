@@ -1,5 +1,6 @@
-import PengurusSection from '@/components/pengurus/PengurusSection';
 import { Metadata } from 'next';
+
+import PengurusSection from '@/components/pengurus/PengurusSection';
 
 export const metadata: Metadata = {
   title: 'Pengurus',

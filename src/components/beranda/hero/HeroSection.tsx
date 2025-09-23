@@ -20,7 +20,7 @@ export const HeroSection = () => {
           </div>
           <Link
             href="#"
-            className="hidden items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md md:block md:inline-flex"
+            className="hidden items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md md:inline-flex"
           >
             <span>Lanjutkan</span>
             <Image

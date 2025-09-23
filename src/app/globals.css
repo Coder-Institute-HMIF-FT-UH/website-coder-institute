@@ -28,7 +28,7 @@ html {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1100px) {
   :root {
     --container-padding-x: 118px;
     --container-padding-y: 48px;

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const UnderConstruction = () => {
   return (
-    <div className="flex min-h-[80vh] flex-col items-center justify-center space-y-5 text-center">
+    <div className="flex flex-col items-center justify-center space-y-5 text-center">
       <Image
         src="/logo-coder.png"
         alt="Logo Coder Institute"

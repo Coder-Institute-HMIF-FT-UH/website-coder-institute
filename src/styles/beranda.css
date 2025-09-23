@@ -1,0 +1,44 @@
+.text-gradient-coder {
+  background: linear-gradient(
+    103deg,
+    #ffae21 11.01%,
+    #ffd67f 31.67%,
+    #ffc343 66.77%,
+    #ffae21 90.35%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--yellow-yellow1, #ffae21);
+}
+
+.text-gradient-institute {
+  background: linear-gradient(
+    91deg,
+    var(--black-black1, #1a1a1a) 0%,
+    #575757 39.05%,
+    #7f7f7f 61.52%,
+    var(--black-black2, #333) 96.18%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #333;
+}
+
+.button-lanjutkan {
+  border-radius: 12px;
+  background: linear-gradient(
+    130deg,
+    var(--yellow-yellow5, #ffcb5c) 15.92%,
+    #ffdb8c 48.65%,
+    var(--yellow-yellow5, #ffcb5c) 73.69%
+  );
+  display: inline-flex;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

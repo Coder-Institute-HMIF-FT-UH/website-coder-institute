@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     'Makassar',
   ],
   authors: [{ name: 'Coder Institute HMIF FT UH' }],
+  icons: [{ rel: 'icon', url: '/favicon.ico' }],
   creator: 'Coder Institute',
   publisher: 'Coder Institute',
   robots: {
@@ -58,10 +59,6 @@ export const metadata: Metadata = {
     description:
       'Website resmi Coder Institute - komunitas mahasiswa Unhas aktif di bidang teknologi, coding, dan seminar IT.',
   },
-  // for later
-  // verification: {
-  //   google: "your-google-verification-code", // Ganti dengan kode verifikasi Google Search Console
-  // },
 };
 
 export default function RootLayout({
@@ -81,7 +78,7 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <main className="container pt-20 md:pt-0">{children}</main>
+        <main className="pt-20 md:pt-24">{children}</main>
         <Footer />
 
         {/* vercel */}

@@ -26,7 +26,7 @@ export const TentangKamiSection = () => {
                 'linear-gradient(104deg, #FFF7ED 9.98%, #FFFBF6 28.58%, #FFF7ED 50.19%, #FFFAF4 78.46%, #FFF7ED 97.9%)',
             }}
           >
-            <p className="text-start text-sm leading-relaxed text-[#000] sm:text-base xl:text-xl">
+            <p className="text-start text-sm leading-relaxed text-[#000] sm:text-base lg:text-lg 2xl:text-xl">
               <span className="font-semibold text-[#FFAE21]">
                 Coder Institute HMIF FT-UH
               </span>{' '}

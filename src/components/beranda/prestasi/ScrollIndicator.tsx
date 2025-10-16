@@ -8,9 +8,11 @@ import { useEffect, useRef, useState } from 'react';
  *   Komponen ini tidak membuat container scroll sendiri, melainkan menerima referensi
  *   dari parent (`PrestasiTerbaruSection`) agar indicator tetap berada di luar
  *   elemen yang di-scroll (tidak ikut ter-scroll ketika user scroll konten).
+ * - height: (opsional) tinggi track custom, default 440px
  */
 interface ScrollIndicatorProps {
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
+  height?: number;
 }
 
 /**
@@ -26,6 +28,7 @@ interface ScrollIndicatorProps {
  */
 export const ScrollIndicator = ({
   scrollContainerRef,
+  height = 440,
 }: ScrollIndicatorProps) => {
   // Persentase posisi scroll (0 - 100). Ini yang dipakai untuk menggerakkan thumb.
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -39,7 +42,7 @@ export const ScrollIndicator = ({
   const thumbRef = useRef<HTMLDivElement>(null);
 
   // Konstanta layout (dapat disesuaikan jika desain berubah)
-  const trackHeight = 440; // Tinggi track sesuai tinggi container (px)
+  const trackHeight = height; // Tinggi track sesuai tinggi container (px)
   const thumbHeight = Math.round(trackHeight * 0.2); // Thumb = 20% dari track
 
   /**

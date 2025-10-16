@@ -13,6 +13,7 @@ export const PrestasiTerbaruSection = () => {
   const utama = prestasiTerbaruData[0];
   const lainnya = prestasiTerbaruData.slice(1);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerMobileRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className="mx-auto">
@@ -25,8 +26,26 @@ export const PrestasiTerbaruSection = () => {
         </Link>
       </div>
 
-      {/* Layout utama */}
-      <div className="flex flex-col gap-6 lg:flex-row">
+      {/* Layout untuk ukuran sm-md */}
+      <div className="relative lg:hidden">
+        <div
+          ref={scrollContainerMobileRef}
+          className="scrollbar-hide h-[400px] overflow-y-auto px-4"
+        >
+          <div className="flex flex-col gap-5 pl-6">
+            {prestasiTerbaruData.map(item => (
+              <PrestasiCardKanan key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+        <ScrollIndicator
+          scrollContainerRef={scrollContainerMobileRef}
+          height={400}
+        />
+      </div>
+
+      {/* Layout utama untuk lg+ */}
+      <div className="hidden flex-col gap-6 lg:flex lg:flex-row">
         {/* Kiri: card prestasi utama */}
         <div className="w-full lg:w-1/2">
           <PrestasiCardUtama item={utama} />

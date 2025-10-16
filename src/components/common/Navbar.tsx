@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 z-50 w-full bg-[#FFFDF7] py-2 shadow md:py-3"
+      className="fixed top-0 left-0 z-99 w-full bg-white/80 py-2 shadow-[0_4px_20px_0_rgba(51,51,51,0.06)] backdrop-blur-[4px] transition-all md:py-3"
     >
       <div className="mx-auto max-w-7xl px-8 sm:px-10 lg:px-8">
         <div className="flex h-16 items-center justify-between">

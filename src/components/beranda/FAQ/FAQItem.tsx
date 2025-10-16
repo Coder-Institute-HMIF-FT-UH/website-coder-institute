@@ -25,7 +25,7 @@ export const FAQItem = ({ item, isOpen, onClick }: FAQItemProps) => {
           alt="arrow icon"
           width={12}
           height={12}
-          className={`transform transition-transform duration-300 ${
+          className={`h-auto w-auto transform transition-transform duration-300 ${
             isOpen ? 'rotate-180' : 'rotate-0'
           }`}
         />

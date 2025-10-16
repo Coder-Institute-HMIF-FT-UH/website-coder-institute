@@ -22,6 +22,7 @@ const Footer = () => {
                 alt="Coder Institute Logo"
                 width={50}
                 height={50}
+                className="h-auto w-auto"
               />
               <div>
                 <h2 className="text-xl font-bold">

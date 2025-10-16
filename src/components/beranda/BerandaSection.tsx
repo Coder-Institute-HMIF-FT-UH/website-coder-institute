@@ -1,6 +1,7 @@
 import '@/styles/beranda.css';
 import { FAQSection } from './FAQ/FAQSection';
 import { HeroSection } from './hero/HeroSection';
+import { MisiKamiSection } from './misi-kami/MisiKamiSection';
 import { TentangKamiSection } from './tentang-kami/TentangKamiSection';
 
 const BerandaSection = () => {
@@ -9,7 +10,7 @@ const BerandaSection = () => {
       <HeroSection />
       <TentangKamiSection />
       {/* visi kami section */}
-      {/* misi kami section */}
+      <MisiKamiSection />
       {/* prestasi terbaru section */}
       {/* project terbaru section */}
       {/* apa kata mereka section */}

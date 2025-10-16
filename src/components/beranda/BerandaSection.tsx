@@ -3,6 +3,7 @@ import { ApaKataMerekaSection } from './apa-kata-mereka/ApaKataMerekaSection';
 import { FAQSection } from './FAQ/FAQSection';
 import { HeroSection } from './hero/HeroSection';
 import { MisiKamiSection } from './misi-kami/MisiKamiSection';
+import { PrestasiTerbaruSection } from './prestasi/PrestasiTerbaruSection';
 import { TentangKamiSection } from './tentang-kami/TentangKamiSection';
 
 const BerandaSection = () => {
@@ -12,7 +13,7 @@ const BerandaSection = () => {
       <TentangKamiSection />
       {/* visi kami section */}
       <MisiKamiSection />
-      {/* prestasi terbaru section */}
+      <PrestasiTerbaruSection />
       {/* project terbaru section */}
       <ApaKataMerekaSection />
       <FAQSection />

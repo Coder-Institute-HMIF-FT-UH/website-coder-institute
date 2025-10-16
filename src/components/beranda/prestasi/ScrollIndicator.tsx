@@ -9,10 +9,12 @@ import { useEffect, useRef, useState } from 'react';
  *   dari parent (`PrestasiTerbaruSection`) agar indicator tetap berada di luar
  *   elemen yang di-scroll (tidak ikut ter-scroll ketika user scroll konten).
  * - height: (opsional) tinggi track custom, default 440px
+ * - className: (opsional) custom className untuk override height secara responsif
  */
 interface ScrollIndicatorProps {
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
   height?: number;
+  className?: string;
 }
 
 /**
@@ -29,6 +31,7 @@ interface ScrollIndicatorProps {
 export const ScrollIndicator = ({
   scrollContainerRef,
   height = 440,
+  className = '',
 }: ScrollIndicatorProps) => {
   // Persentase posisi scroll (0 - 100). Ini yang dipakai untuk menggerakkan thumb.
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -152,13 +155,13 @@ export const ScrollIndicator = ({
   // Render struktur: track (background) dan thumb (active)
   return (
     <div
-      className="absolute top-0 left-2 w-[8px] cursor-pointer rounded-[20px] bg-[#FFF7E7] select-none"
-      style={{ height: `${trackHeight}px` }}
+      className={`absolute top-0 left-2 w-[6px] cursor-pointer rounded-[20px] bg-[#FFF7E7] select-none sm:w-[8px] ${className}`}
+      style={className ? undefined : { height: `${trackHeight}px` }}
     >
       <div
         ref={trackRef}
         className="relative w-full"
-        style={{ height: `${trackHeight}px` }}
+        style={className ? undefined : { height: `${trackHeight}px` }}
         onClick={handleTrackClick}
       >
         <div

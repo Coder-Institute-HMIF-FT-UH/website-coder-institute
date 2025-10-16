@@ -17,22 +17,24 @@ export const PrestasiTerbaruSection = () => {
 
   return (
     <section className="mx-auto">
-      <div className="mb-10 flex items-center justify-between">
-        <h2 className="text-3xl font-bold">Prestasi Terbaru</h2>
+      <div className="xs:mb-8 mb-6 flex flex-wrap items-center justify-between gap-x-2 gap-y-3 sm:mb-10 sm:gap-4">
+        <h2 className="xs:text-xl min-w-0 flex-1 text-left text-lg leading-tight font-bold sm:text-3xl">
+          Prestasi Terbaru
+        </h2>
         <Link href="/prestasi">
-          <button className="cursor-pointer rounded-lg bg-[#FFCB5C] px-5 py-2 font-semibold text-black transition">
+          <button className="xs:px-3.5 xs:py-2 xs:text-xs cursor-pointer rounded-lg bg-[#FFCB5C] px-2.5 py-1.5 text-[11px] font-semibold whitespace-nowrap text-black transition sm:px-5 sm:py-2 sm:text-base">
             Lihat lainnya
           </button>
         </Link>
       </div>
 
-      {/* Layout untuk ukuran sm-md */}
+      {/* Layout untuk ukuran lg kebawah */}
       <div className="relative lg:hidden">
         <div
           ref={scrollContainerMobileRef}
-          className="scrollbar-hide h-[400px] overflow-y-auto px-4"
+          className="scrollbar-hide xs:pl-1 h-[450px] overflow-y-auto pr-0 pl-2 sm:h-[400px] sm:px-2"
         >
-          <div className="flex flex-col gap-5 pl-6">
+          <div className="xs:gap-3 xs:pl-6 flex flex-col gap-4 pl-4">
             {prestasiTerbaruData.map(item => (
               <PrestasiCardKanan key={item.id} item={item} />
             ))}
@@ -40,7 +42,7 @@ export const PrestasiTerbaruSection = () => {
         </div>
         <ScrollIndicator
           scrollContainerRef={scrollContainerMobileRef}
-          height={400}
+          className="h-[450px] sm:h-[400px]"
         />
       </div>
 
@@ -63,7 +65,10 @@ export const PrestasiTerbaruSection = () => {
               ))}
             </div>
           </div>
-          <ScrollIndicator scrollContainerRef={scrollContainerRef} />
+          <ScrollIndicator
+            scrollContainerRef={scrollContainerRef}
+            className="h-[440px]"
+          />
         </div>
       </div>
     </section>

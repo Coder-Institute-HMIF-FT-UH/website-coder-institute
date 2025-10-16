@@ -4,6 +4,7 @@ import { FAQSection } from './FAQ/FAQSection';
 import { HeroSection } from './hero/HeroSection';
 import { MisiKamiSection } from './misi-kami/MisiKamiSection';
 import { PrestasiTerbaruSection } from './prestasi/PrestasiTerbaruSection';
+import { ProjectTerbaruSection } from './project/ProjectTerbaruSection';
 import { TentangKamiSection } from './tentang-kami/TentangKamiSection';
 
 const BerandaSection = () => {
@@ -14,7 +15,7 @@ const BerandaSection = () => {
       {/* visi kami section */}
       <MisiKamiSection />
       <PrestasiTerbaruSection />
-      {/* project terbaru section */}
+      <ProjectTerbaruSection />
       <ApaKataMerekaSection />
       <FAQSection />
       {/* <UnderConstruction /> */}

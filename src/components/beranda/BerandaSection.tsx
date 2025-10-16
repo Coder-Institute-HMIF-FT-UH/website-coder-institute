@@ -1,4 +1,5 @@
 import '@/styles/beranda.css';
+import { ApaKataMerekaSection } from './apa-kata-mereka/ApaKataMerekaSection';
 import { FAQSection } from './FAQ/FAQSection';
 import { HeroSection } from './hero/HeroSection';
 import { MisiKamiSection } from './misi-kami/MisiKamiSection';
@@ -13,7 +14,7 @@ const BerandaSection = () => {
       <MisiKamiSection />
       {/* prestasi terbaru section */}
       {/* project terbaru section */}
-      {/* apa kata mereka section */}
+      <ApaKataMerekaSection />
       <FAQSection />
       {/* <UnderConstruction /> */}
     </div>

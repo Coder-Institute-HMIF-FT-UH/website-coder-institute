@@ -20,7 +20,10 @@ export const ApaKataMerekaSection = () => {
   } = useTestimonialCarousel();
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4">
+    <section
+      id="apa-kata-mereka"
+      className="mx-auto w-full max-w-6xl scroll-mt-20 px-4"
+    >
       <SectionHeading title="Apa Kata Mereka Tentang Coder Institute?" />
 
       <div className="relative mt-10">

@@ -4,9 +4,8 @@ import { SectionHeading } from '../SectionHeading';
 
 export const TentangKamiSection = () => {
   return (
-    <section className="mx-auto">
+    <section id="tentang-kami" className="mx-auto scroll-mt-28 lg:scroll-mt-40">
       <SectionHeading title="Tentang Kami" />
-
       <div className="relative mt-4 flex flex-col items-end md:mt-10 md:flex-row md:items-end md:justify-center xl:max-w-[1000px]">
         {/* Logo Kiri */}
         <div

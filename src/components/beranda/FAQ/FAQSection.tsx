@@ -4,7 +4,7 @@ import { FAQList } from './FAQList';
 
 export const FAQSection = () => {
   return (
-    <div className="space-y-6">
+    <div id="faq" className="scroll-mt-20 space-y-6">
       <SectionHeading title="Pertanyaan Umum" />
       <FAQList />
     </div>

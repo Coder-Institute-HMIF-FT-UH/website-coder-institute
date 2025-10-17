@@ -15,11 +15,12 @@ export const HeroSection = () => {
               <span className="text-gradient-institute">Institute</span>
             </h1>
             <h4 className="px-4 text-center font-bold sm:px-10 sm:text-lg md:px-0 lg:text-xl xl:text-2xl">
-              HIMPUNAN MAHASISWA FAKULTAS TEKNIK UNIVERSITAS HASANUDDIN 2025
+              HIMPUNAN MAHASISWA INFORMATIKA FAKULTAS TEKNIK UNIVERSITAS
+              HASANUDDIN 2025
             </h4>
           </div>
           <Link
-            href="#"
+            href="#tentang-kami"
             className="hidden items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md md:inline-flex"
           >
             <span>Lanjutkan</span>
@@ -28,6 +29,7 @@ export const HeroSection = () => {
               alt="Arrow Down"
               width={14}
               height={14}
+              className="h-auto w-auto"
             />
           </Link>
         </div>
@@ -44,8 +46,8 @@ export const HeroSection = () => {
           />
 
           <Link
-            href="#"
-            className="inline-flex items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md md:hidden"
+            href="#tentang-kami"
+            className="mb-4 inline-flex items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md sm:mb-0 md:hidden"
           >
             <span>Lanjutkan</span>
             <Image
@@ -53,6 +55,7 @@ export const HeroSection = () => {
               alt="Arrow Down"
               width={14}
               height={14}
+              className="h-auto w-auto"
             />
           </Link>
         </div>

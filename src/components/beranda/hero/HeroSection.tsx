@@ -29,6 +29,7 @@ export const HeroSection = () => {
               alt="Arrow Down"
               width={14}
               height={14}
+              className="h-auto w-auto"
             />
           </Link>
         </div>
@@ -46,7 +47,7 @@ export const HeroSection = () => {
 
           <Link
             href="#tentang-kami"
-            className="inline-flex items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md md:hidden"
+            className="mb-16 inline-flex items-center justify-center gap-[10px] self-center rounded-[12px] bg-[linear-gradient(130deg,#ffcb5c_15.92%,#ffdb8c_48.65%,#ffcb5c_73.69%)] px-[28px] py-[12px] font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[linear-gradient(130deg,#ffd97a_15.92%,#ffe6a8_48.65%,#ffd97a_73.69%)] hover:shadow-md sm:mb-0 md:hidden"
           >
             <span>Lanjutkan</span>
             <Image
@@ -54,6 +55,7 @@ export const HeroSection = () => {
               alt="Arrow Down"
               width={14}
               height={14}
+              className="h-auto w-auto"
             />
           </Link>
         </div>

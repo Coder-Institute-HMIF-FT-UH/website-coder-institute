@@ -15,7 +15,8 @@ export const HeroSection = () => {
               <span className="text-gradient-institute">Institute</span>
             </h1>
             <h4 className="px-4 text-center font-bold sm:px-10 sm:text-lg md:px-0 lg:text-xl xl:text-2xl">
-              HIMPUNAN MAHASISWA FAKULTAS TEKNIK UNIVERSITAS HASANUDDIN 2025
+              HIMPUNAN MAHASISWA INFORMATIKA FAKULTAS TEKNIK UNIVERSITAS
+              HASANUDDIN 2025
             </h4>
           </div>
           <Link

@@ -3,23 +3,34 @@
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
-const filterList = [
-  'Semua',
-  'Inti',
-  'UI/UX',
-  'Website',
-  'Mobile',
-  'Game',
-  'IoT',
-  'Humas',
-  'Pubdok',
-  'Logistik',
-  'Kompetisi',
-];
+import { filterList } from '@/constants/pengurus/pengurusConstants';
 
-export const FilterPengurus: React.FC = () => {
+interface FilterPengurusProps {
+  activeFilter?: string;
+  onFilterChange?: (filter: string) => void;
+}
+
+export const FilterPengurus: React.FC<FilterPengurusProps> = ({
+  activeFilter: externalActiveFilter,
+  onFilterChange,
+}) => {
   const [activeFilter, setActiveFilter] = useState('Semua');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Sync dengan external filter dari parent
+  useEffect(() => {
+    if (externalActiveFilter) {
+      setActiveFilter(externalActiveFilter);
+    }
+  }, [externalActiveFilter]);
+
+  // Handle filter change
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    if (onFilterChange) {
+      onFilterChange(filter);
+    }
+  };
 
   // Tutup otomatis dropdown saat pengguna scroll (hanya untuk mobile)
   useEffect(() => {
@@ -48,7 +59,7 @@ export const FilterPengurus: React.FC = () => {
           <button
             key={item}
             type="button"
-            onClick={() => setActiveFilter(item)}
+            onClick={() => handleFilterChange(item)}
             className={clsx(
               'px-5 py-2 text-sm font-medium whitespace-nowrap transition-all',
               'rounded-[20px]',
@@ -117,7 +128,7 @@ export const FilterPengurus: React.FC = () => {
                   key={item}
                   type="button"
                   onClick={() => {
-                    setActiveFilter(item);
+                    handleFilterChange(item);
                     setIsDropdownOpen(false);
                   }}
                   className={clsx(

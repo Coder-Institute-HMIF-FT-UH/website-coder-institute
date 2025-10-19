@@ -1,33 +1,15 @@
-import {
-  profilPengurusGame,
-  profilPengurusHumas,
-  profilPengurusInti,
-  profilPengurusIoT,
-  profilPengurusKompetisi,
-  profilPengurusLogistik,
-  profilPengurusMobile,
-  profilPengurusPubdok,
-  profilPengurusUIUX,
-  profilPengurusWebsite,
-} from '@/data/profil/profilPengurus';
+'use client';
+
+import { useFilterPengurus } from '@/hooks/pengurus/useFilterPengurus';
 
 import { FilterPengurus } from './FilterPengurus';
 import { HeadingPengurus } from './HeadingPengurus';
 import { PengurusSectionPerDivision } from './PengurusSectionPerDivision';
 
 const PengurusSection = () => {
-  const pengurusData = [
-    { title: 'Pengurus Inti', data: profilPengurusInti },
-    { title: 'Divisi UI/UX', data: profilPengurusUIUX },
-    { title: 'Divisi Website', data: profilPengurusWebsite },
-    { title: 'Divisi Mobile', data: profilPengurusMobile },
-    { title: 'Divisi Game', data: profilPengurusGame },
-    { title: 'Divisi IoT', data: profilPengurusIoT },
-    { title: 'Divisi Humas', data: profilPengurusHumas },
-    { title: 'Divisi Publikasi dan Dokumentasi', data: profilPengurusPubdok },
-    { title: 'Divisi Logistik', data: profilPengurusLogistik },
-    { title: 'Divisi Kompetisi', data: profilPengurusKompetisi },
-  ];
+  // Gunakan custom hook untuk mengelola filter logic
+  const { activeFilter, filteredData, handleFilterChange } =
+    useFilterPengurus();
 
   return (
     <div className="relative mx-auto mt-10 mb-20 min-h-[80vh]">
@@ -38,20 +20,27 @@ const PengurusSection = () => {
         </div>
         {/* Desktop Filter - > md */}
         <div className="hidden w-full md:block">
-          <FilterPengurus />
+          <FilterPengurus
+            activeFilter={activeFilter}
+            onFilterChange={handleFilterChange}
+          />
         </div>
       </div>
 
       {/* Sticky Mobile Filter */}
       <div className="sticky top-20 z-[5] flex justify-end px-4 pt-4 md:hidden">
-        <FilterPengurus />
+        <FilterPengurus
+          activeFilter={activeFilter}
+          onFilterChange={handleFilterChange}
+        />
       </div>
 
-      {/* Content */}
+      {/* Content - hanya tampilkan yang sesuai filter */}
       <div className="mt-6 flex flex-col gap-20 md:mt-12">
-        {pengurusData.map((pengurus, _) => (
+        {filteredData.map(pengurus => (
           <PengurusSectionPerDivision
-            key={pengurus.title}
+            key={pengurus.id}
+            id={pengurus.id}
             title={pengurus.title}
             data={pengurus.data}
           />

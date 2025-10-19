@@ -9,13 +9,14 @@ export interface PengurusItem {
 }
 
 export interface PengurusSectionPerDivisionProps {
+  id?: string;
   title: string;
   data: PengurusItem[];
 }
 
 export const PengurusSectionPerDivision: React.FC<
   PengurusSectionPerDivisionProps
-> = ({ title, data }) => {
+> = ({ id, title, data }) => {
   return (
     <section className="w-full">
       <h2 className="mb-4 text-left text-[22px] font-semibold text-[#1A1A1A]">

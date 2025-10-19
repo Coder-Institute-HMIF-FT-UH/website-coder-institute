@@ -64,7 +64,7 @@ export const FilterPengurus: React.FC<FilterPengurusProps> = ({
               'px-5 py-2 text-sm font-medium whitespace-nowrap transition-all',
               'rounded-[20px]',
               activeFilter === item
-                ? 'bg-[var(--yellow-yellow4,#FFC343)] text-[#2E2E2E]'
+                ? 'bg-[var(--yellow-yellow4,#FFC343)] font-semibold text-[#2E2E2E]'
                 : 'cursor-pointer border border-[var(--yellow-yellow4,#FFC343)] bg-[var(--yellow-yellow7,#FFF9F1)] text-[#2E2E2E] hover:bg-[var(--yellow-yellow4,#FFC343)]'
             )}
           >

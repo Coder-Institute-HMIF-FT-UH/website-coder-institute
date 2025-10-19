@@ -16,7 +16,10 @@ export const PrestasiTerbaruSection = () => {
   const scrollContainerMobileRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="mx-auto">
+    <section
+      id="prestasi-terbaru"
+      className="mx-auto scroll-mt-28 lg:scroll-mt-40"
+    >
       <div className="xs:mb-8 mb-6 flex flex-wrap items-center justify-between gap-x-2 gap-y-3 sm:mb-10 sm:gap-4">
         <h2 className="xs:text-xl min-w-0 flex-1 text-left text-lg leading-tight font-bold sm:text-3xl">
           Prestasi Terbaru

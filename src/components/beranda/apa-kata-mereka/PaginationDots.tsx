@@ -18,7 +18,7 @@ export const PaginationDots = ({
           className={`h-3 w-3 rounded-full transition ${
             index === selectedIndex
               ? 'bg-[#FFAE21]'
-              : 'border border-[#FFAE21] bg-transparent'
+              : 'cursor-pointer border border-[#FFAE21] bg-transparent'
           }`}
           aria-label={`Go to slide ${index + 1}`}
           aria-current={index === selectedIndex ? 'page' : undefined}

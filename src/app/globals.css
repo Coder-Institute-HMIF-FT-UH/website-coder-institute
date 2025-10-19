@@ -14,6 +14,8 @@ html {
 
 @theme {
   --breakpoint-xs: 350px;
+  --breakpoint-xsm: 300px;
+  --breakpoint-smd: 580px;
 }
 
 /* Definisi token Tailwind (agar bisa dipakai dengan utilitas seperti bg-[customize-name], text-[customize-name], font-[customize-name]) */

@@ -13,7 +13,7 @@ export const MisiKamiSection = () => {
   const selectedItem = misiKamiData.find(item => item.id === selectedId);
 
   return (
-    <section className="mx-auto">
+    <section id="misi-kami" className="mx-auto scroll-mt-28 lg:scroll-mt-40">
       <SectionHeading title="Misi Kami" />
 
       <div className="mt-6 flex flex-col items-center justify-center gap-8 md:mt-10 md:flex-row md:gap-16 xl:gap-24">

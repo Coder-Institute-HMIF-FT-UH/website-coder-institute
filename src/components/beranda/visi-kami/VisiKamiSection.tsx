@@ -2,7 +2,7 @@ import { SectionHeading } from '../SectionHeading';
 
 export const VisiKamiSection = () => {
   return (
-    <section className="mx-auto">
+    <section id="visi-kami" className="mx-auto scroll-mt-28 lg:scroll-mt-40">
       <SectionHeading title="Visi Kami" />
 
       <div className="relative mt-4 flex flex-col items-center gap-4 md:mt-10 md:flex-row md:items-center md:justify-center md:gap-0 xl:max-w-[1000px]">

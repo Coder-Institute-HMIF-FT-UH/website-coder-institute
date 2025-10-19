@@ -11,14 +11,14 @@ export const prestasiTerbaruData: PrestasiItem[] = [
     title:
       'Juara 1 HackFest 2025 Regional Makassar oleh Google Developer Groups',
     participants: 'Aulia Tifani, Firman Jaya Kusuma, dan Tasya Aulia Putri',
-    image: '/beranda/prestasi/hackfest.png',
+    image: '/beranda/prestasi/psychoboost.png',
   },
   {
     id: 2,
     title:
       'Juara 3 PsychoBoost! Vol. 2: Essay & Olympic National Competition Bidang Teknologi',
     participants: 'Zulfahmi dan Adrian',
-    image: '/beranda/prestasi/psychoboost.png',
+    image: '/beranda/prestasi/hackfest.png',
   },
   {
     id: 3,

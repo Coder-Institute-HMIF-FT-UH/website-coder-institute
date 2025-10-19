@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const UnderConstruction = () => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-5 text-center">
+    <div className="flex min-h-screen flex-col items-center justify-center space-y-5 text-center">
       <Image
         src="/logo-coder.png"
         alt="Logo Coder Institute"
@@ -11,21 +11,25 @@ export const UnderConstruction = () => {
         height={120}
         quality={100}
         priority
+        className="h-auto w-auto"
       />
-      <h1 className="text-foreground text-lg font-bold sm:text-xl md:text-2xl">
-        Website Sedang Dalam Proses Pengerjaan 🚧
-      </h1>
-      <p className="text-sm md:text-base">
-        Nantikan update terbaru dari{' '}
-        <Link
-          href="https://www.instagram.com/coderinstitute/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary font-semibold hover:underline"
-        >
-          <span className="font-semibold">Coder Institute</span>.
-        </Link>
-      </p>
+
+      <div className="space-y-3 lg:space-y-5">
+        <h1 className="text-foreground text-lg font-bold sm:text-xl md:text-2xl">
+          Website Sedang Dalam Proses Pengerjaan 🚧
+        </h1>
+        <p className="text-sm md:text-base">
+          Nantikan update terbaru dari{' '}
+          <Link
+            href="https://www.instagram.com/coderinstitute/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-semibold hover:underline"
+          >
+            <span className="font-semibold">Coder Institute</span>.
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

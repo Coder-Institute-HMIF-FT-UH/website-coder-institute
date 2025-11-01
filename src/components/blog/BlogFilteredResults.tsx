@@ -20,10 +20,12 @@ const BlogFilteredResults = () => {
 
   const searchQuery = searchParams.get('search');
 
-  const filteredBlogs = useMemo(
-    () => filterBlogsByCategory(activeFilter, searchQuery),
-    [activeFilter, searchQuery]
-  );
+  const filteredBlogs = useMemo(() => {
+    return filterBlogsByCategory({
+      category: activeFilter,
+      keyword: searchQuery,
+    });
+  }, [activeFilter, searchQuery]);
 
   if (filteredBlogs.length === 0) {
     return (

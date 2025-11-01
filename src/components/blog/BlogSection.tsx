@@ -14,8 +14,22 @@ const BlogSection = () => (
           <BlogHeroTitle />
           <BlogHeroDescription />
         </div>
-        <BlogSearchBar />
-        <BlogFilterList />
+        <Suspense
+          fallback={
+            <div className="mt-4 h-[58px] w-full max-w-2xl rounded-[64px] bg-[var(--yellow-yellow6,#FFF7ED)] opacity-60 md:mt-10" />
+          }
+        >
+          <BlogSearchBar />
+        </Suspense>
+        <Suspense
+          fallback={
+            <p className="mt-6 text-sm text-[#FCFCF7] md:text-base">
+              Memuat filter...
+            </p>
+          }
+        >
+          <BlogFilterList />
+        </Suspense>
       </div>
 
       <Suspense

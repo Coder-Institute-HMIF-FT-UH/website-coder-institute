@@ -4,7 +4,7 @@ import { projekTerbaruKami } from '@/data/projek/projekData';
 
 export const ProjectTerbaruKami = () => {
   return (
-    <section className="mt-12 w-full">
+    <section className="mt-6 w-full md:mt-10 lg:mt-12">
       <h2 className="text-2xl font-semibold md:text-3xl">
         Projek Terbaru Kami
       </h2>

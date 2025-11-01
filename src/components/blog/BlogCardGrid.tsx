@@ -1,11 +1,17 @@
-import { Card } from '@/components/common/Card';
-import { blogData } from '@/data/blog/blogData';
+'use client';
 
-const BlogCardGrid = () => {
+import { Card } from '@/components/common/Card';
+import type { BlogItem } from '@/data/blog/blogData';
+
+interface BlogCardGridProps {
+  blogs: BlogItem[];
+}
+
+const BlogCardGrid = ({ blogs }: BlogCardGridProps) => {
   return (
-    <div className="blog-container mt-0 md:mt-16">
+    <div className="blog-container">
       <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
-        {blogData.map(blog => (
+        {blogs.map(blog => (
           <Card key={blog.id} {...blog} />
         ))}
       </div>

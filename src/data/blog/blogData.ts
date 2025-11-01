@@ -36,3 +36,5 @@ export const blogData = [
     imageUrl: '/projek/template.png',
   },
 ];
+
+export type BlogItem = (typeof blogData)[number];

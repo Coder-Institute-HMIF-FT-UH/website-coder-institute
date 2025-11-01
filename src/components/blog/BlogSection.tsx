@@ -7,7 +7,7 @@ import BlogHeroTitle from './BlogHeroTitle';
 import BlogSearchBar from './BlogSearchBar';
 
 const BlogSection = () => (
-  <section className="flex min-h-[270vh] w-full flex-col items-center px-6 pt-[18vh] pb-20 md:pt-36 md:pb-20">
+  <section className="flex w-full flex-col items-center px-6 pt-[18vh] pb-20 md:pt-36 md:pb-20">
     <div className="flex w-full flex-col items-center gap-16 md:gap-24">
       <div className="flex min-h-[90vh] w-full flex-col items-center justify-center gap-6 text-center md:min-h-[70vh]">
         <div className="flex flex-col items-center gap-8 md:gap-12">

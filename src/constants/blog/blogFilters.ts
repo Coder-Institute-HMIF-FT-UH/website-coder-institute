@@ -21,7 +21,24 @@ export const BLOG_FILTER_OPTIONS: string[] = [
 export const validateBlogFilter = (value: string | null) =>
   value && BLOG_FILTER_OPTIONS.includes(value) ? value : BLOG_FILTER_ALL;
 
-export const filterBlogsByCategory = (category: string) =>
-  category === BLOG_FILTER_ALL
-    ? blogData
-    : blogData.filter(blog => blog.category === category);
+export const filterBlogsByCategory = (
+  category: string,
+  keyword?: string | null
+) => {
+  const baseBlogs =
+    category === BLOG_FILTER_ALL
+      ? blogData
+      : blogData.filter(blog => blog.category === category);
+
+  const normalizedKeyword = keyword?.trim().toLowerCase();
+
+  if (!normalizedKeyword) {
+    return baseBlogs;
+  }
+
+  return baseBlogs.filter(blog => {
+    const haystack =
+      `${blog.title} ${blog.description} ${blog.authors} ${blog.category}`.toLowerCase();
+    return haystack.includes(normalizedKeyword);
+  });
+};

@@ -18,14 +18,16 @@ const BlogFilteredResults = () => {
     [searchParams]
   );
 
+  const searchQuery = searchParams.get('search');
+
   const filteredBlogs = useMemo(
-    () => filterBlogsByCategory(activeFilter),
-    [activeFilter]
+    () => filterBlogsByCategory(activeFilter, searchQuery),
+    [activeFilter, searchQuery]
   );
 
   if (filteredBlogs.length === 0) {
     return (
-      <p className="text-[#111827]] mt-12 text-center text-sm md:text-base">
+      <p className="mt-12 text-center text-sm text-[#2E2E2E] md:text-base">
         Belum ada artikel untuk kategori ini. Nantikan update selanjutnya!
       </p>
     );

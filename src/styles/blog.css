@@ -1,0 +1,12 @@
+.blog-section {
+  background: linear-gradient(
+    180deg,
+    var(--yellow-yellow3, #febd32) 8.65%,
+    #ffdb8c 28.1%,
+    #fffaf4 42.58%
+  );
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

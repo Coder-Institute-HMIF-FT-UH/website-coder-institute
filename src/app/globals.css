@@ -3,6 +3,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 :root {
@@ -42,6 +51,7 @@ body {
   color: var(--foreground);
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {

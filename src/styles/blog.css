@@ -2,13 +2,14 @@
   background: linear-gradient(
     180deg,
     var(--yellow-yellow3, #febd32) 8.65%,
-    #ffdb8c 28.1%,
-    #fffaf4 42.58%
+    #ffdb8c max(28.1%, 70vh),
+    #fffaf4 max(42.58%, 100vh)
   );
   width: 100vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  min-height: 100vh;
 }
 
 /* Aktifkan hanya pada layar md ke atas (768px+) */

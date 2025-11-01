@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Card } from '@/components/common/Card';
@@ -15,7 +16,21 @@ const FILTER_OPTIONS: string[] = [
 ];
 
 export const ProjectsFilterSection = () => {
-  const [active, setActive] = useState(FILTER_ALL);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const validatedFilter = useMemo(() => {
+    const requestedFilter = searchParams.get('filter');
+
+    if (requestedFilter && FILTER_OPTIONS.includes(requestedFilter)) {
+      return requestedFilter;
+    }
+
+    return FILTER_ALL;
+  }, [searchParams]);
+
+  const [active, setActive] = useState(validatedFilter);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +42,10 @@ export const ProjectsFilterSection = () => {
     [active]
   );
   const hasProjects = filteredProjects.length > 0;
+
+  useEffect(() => {
+    setActive(validatedFilter);
+  }, [validatedFilter]);
 
   useEffect(() => {
     if (!isDropdownOpen) return;
@@ -58,13 +77,26 @@ export const ProjectsFilterSection = () => {
   const handleSelectFilter = (item: string) => {
     setActive(item);
     setIsDropdownOpen(false);
+
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (item === FILTER_ALL) {
+      params.delete('filter');
+    } else {
+      params.set('filter', item);
+    }
+
+    const query = params.toString();
+    const nextUrl = query ? `${pathname}?${query}` : pathname;
+
+    router.replace(nextUrl, { scroll: false });
   };
 
   return (
     <section className="mt-12 w-full">
       {/* Mobile (md and below) dropdown */}
-      <div className="flex justify-end md:hidden">
-        <div ref={dropdownRef} className="relative w-full max-w-[150px]">
+      <div className="flex justify-center md:hidden">
+        <div ref={dropdownRef} className="relative w-full max-w-xs">
           <button
             type="button"
             onClick={() => setIsDropdownOpen(prev => !prev)}

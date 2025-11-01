@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { HeadingCustom } from '../common/HeadingCustom';
 
 import { ProjectsFilterSection } from './ProjectsFilterSection';
@@ -9,7 +11,15 @@ const ProjekSection = () => {
       <HeadingCustom text="Projek Coder Institute" />
       <div className="w-full">
         <ProjectTerbaruKami />
-        <ProjectsFilterSection />
+        <Suspense
+          fallback={
+            <p className="mt-12 text-center text-sm text-[#4B5563] md:text-base">
+              Memuat projek...
+            </p>
+          }
+        >
+          <ProjectsFilterSection />
+        </Suspense>
       </div>
     </div>
   );

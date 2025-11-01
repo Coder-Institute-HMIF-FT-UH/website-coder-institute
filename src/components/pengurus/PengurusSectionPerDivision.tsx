@@ -18,7 +18,7 @@ export const PengurusSectionPerDivision: React.FC<
   PengurusSectionPerDivisionProps
 > = ({ id, title, data }) => {
   return (
-    <section className="w-full">
+    <section id={id} className="w-full">
       <h2 className="mb-4 text-left text-[22px] font-semibold text-[#1A1A1A]">
         {title}
       </h2>

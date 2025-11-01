@@ -2,13 +2,21 @@
 
 import { useState } from 'react';
 
-const FILTER_OPTIONS = ['Semua', 'UI/UX', 'Website', 'Mobile', 'Game', 'IoT'];
+const FILTER_OPTIONS = [
+  'Semua',
+  'UI/UX',
+  'Website',
+  'Mobile',
+  'Game',
+  'IoT',
+  'Lainnya',
+];
 
 const BlogFilterList = () => {
   const [activeFilter, setActiveFilter] = useState('Semua');
 
   return (
-    <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+    <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:gap-4">
       {FILTER_OPTIONS.map(option => {
         const isActive = option === activeFilter;
 

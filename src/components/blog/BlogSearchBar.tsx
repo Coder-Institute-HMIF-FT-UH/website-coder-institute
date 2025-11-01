@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const BlogSearchBar = () => {
   return (
-    <form className="mt-10 flex w-full max-w-2xl items-center gap-3 rounded-[64px] bg-[linear-gradient(0deg,var(--yellow-yellow6,#FFF7ED)_0%,var(--yellow-yellow6,#FFF7ED)_100%)] px-7 py-4.5">
+    <form className="mt-4 flex w-full max-w-2xl items-center gap-3 rounded-[64px] bg-[linear-gradient(0deg,var(--yellow-yellow6,#FFF7ED)_0%,var(--yellow-yellow6,#FFF7ED)_100%)] px-7 py-4.5 md:mt-10">
       <Image
         src="/icons/search.svg"
         alt="Ikon pencarian"

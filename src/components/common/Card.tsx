@@ -20,13 +20,15 @@ export const Card = ({
     <div className="w-full overflow-hidden rounded-[24px] border border-[#FFC343] bg-[#FFF7ED] p-5 shadow-sm">
       {/* Thumbnail */}
       <div className="mb-4 overflow-hidden rounded-[20px]">
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={400}
-          height={250}
-          className="h-[200px] w-full rounded-[20px] object-cover lg:h-[250px]"
-        />
+        <div className="relative aspect-[8/5] w-full">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="rounded-[20px] object-cover"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+          />
+        </div>
       </div>
 
       {/* Category */}

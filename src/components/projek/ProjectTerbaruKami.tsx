@@ -10,15 +10,16 @@ export const ProjectTerbaruKami = () => {
       </h2>
 
       <div className="mt-6 rounded-[24px] border border-[#FFC343] bg-[#FFF7ED] p-5 md:p-8 lg:p-10">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-10">
+        <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center md:gap-8 lg:gap-10">
           {/* Gambar kiri */}
-          <div className="relative mx-auto w-full overflow-hidden rounded-[16px] bg-[#EDE5D8] lg:max-w-[420px] lg:flex-shrink-0">
-            <div className="relative aspect-[5/3] w-full">
+          <div className="relative mx-auto w-full overflow-hidden rounded-[16px] bg-[#EDE5D8] md:mx-0 md:rounded-[20px]">
+            <div className="relative aspect-[5/3] w-full sm:aspect-[16/9] md:aspect-[4/3] lg:aspect-[5/3]">
               <Image
                 src={projekTerbaruKami.image}
                 alt={projekTerbaruKami.title}
                 fill
                 className="object-cover"
+                sizes="(max-width: 800px) 100vw, (max-width: 1200px) 50vw, 400px"
                 priority
               />
             </div>

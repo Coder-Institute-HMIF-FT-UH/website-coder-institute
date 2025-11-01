@@ -95,8 +95,8 @@ export const ProjectsFilterSection = () => {
   return (
     <section className="mt-12 w-full">
       {/* Mobile (md and below) dropdown */}
-      <div className="flex justify-center md:hidden">
-        <div ref={dropdownRef} className="relative w-full max-w-xs">
+      <div className="flex justify-end md:hidden">
+        <div ref={dropdownRef} className="relative w-full max-w-[135px]">
           <button
             type="button"
             onClick={() => setIsDropdownOpen(prev => !prev)}
@@ -108,10 +108,10 @@ export const ProjectsFilterSection = () => {
             <Image
               src="/icons/arrow.svg"
               alt=""
-              width={16}
-              height={16}
+              width={14}
+              height={14}
               aria-hidden="true"
-              className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+              className={`h-3 w-3 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
             />
           </button>
           {isDropdownOpen && (

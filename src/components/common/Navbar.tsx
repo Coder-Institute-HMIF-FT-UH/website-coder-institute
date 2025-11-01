@@ -100,7 +100,7 @@ const Navbar = () => {
           </Link>
 
           {/* Bagian Tengah: Menu (Desktop Only) */}
-          <div className="hidden items-center space-x-8 lg:flex">
+          <div className="hidden items-center space-x-12 lg:flex">
             {navLinks.map(link => {
               const isActive =
                 link.href === '/'

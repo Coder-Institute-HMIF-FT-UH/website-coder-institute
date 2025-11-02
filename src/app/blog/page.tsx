@@ -1,3 +1,4 @@
+import '@/styles/blog.css';
 import { Metadata } from 'next';
 
 import BlogSection from '@/components/blog/BlogSection';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div>
+    <div className="blog-section -mt-20 md:-mt-24">
       <BlogSection />
     </div>
   );

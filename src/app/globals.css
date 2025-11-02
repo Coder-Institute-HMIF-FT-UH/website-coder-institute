@@ -3,6 +3,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 :root {
@@ -14,6 +23,8 @@ html {
 
 @theme {
   --breakpoint-xs: 350px;
+  --breakpoint-xsm: 300px;
+  --breakpoint-smd: 580px;
 }
 
 /* Definisi token Tailwind (agar bisa dipakai dengan utilitas seperti bg-[customize-name], text-[customize-name], font-[customize-name]) */
@@ -40,6 +51,7 @@ body {
   color: var(--foreground);
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {

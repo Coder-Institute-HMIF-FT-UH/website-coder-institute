@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
-import { filterList } from '@/constants/pengurus/pengurusConstants';
+import { FILTER_ALL, filterList } from '@/constants/pengurus/pengurusConstants';
 
 interface FilterPengurusProps {
   activeFilter?: string;
@@ -14,14 +14,22 @@ export const FilterPengurus: React.FC<FilterPengurusProps> = ({
   activeFilter: externalActiveFilter,
   onFilterChange,
 }) => {
-  const [activeFilter, setActiveFilter] = useState('Semua');
+  const [activeFilter, setActiveFilter] = useState(FILTER_ALL);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Sync dengan external filter dari parent
   useEffect(() => {
-    if (externalActiveFilter) {
-      setActiveFilter(externalActiveFilter);
+    if (!externalActiveFilter) {
+      setActiveFilter(FILTER_ALL);
+      return;
     }
+
+    const matchedFilter =
+      filterList.find(
+        item => item.toLowerCase() === externalActiveFilter.toLowerCase()
+      ) ?? FILTER_ALL;
+
+    setActiveFilter(matchedFilter);
   }, [externalActiveFilter]);
 
   // Handle filter change

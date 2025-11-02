@@ -18,8 +18,19 @@ export const BLOG_FILTER_OPTIONS: string[] = [
   ),
 ];
 
-export const validateBlogFilter = (value: string | null) =>
-  value && BLOG_FILTER_OPTIONS.includes(value) ? value : BLOG_FILTER_ALL;
+export const validateBlogFilter = (value: string | null) => {
+  if (!value) {
+    return BLOG_FILTER_ALL;
+  }
+
+  const normalizedValue = value.toLowerCase();
+
+  return (
+    BLOG_FILTER_OPTIONS.find(
+      option => option.toLowerCase() === normalizedValue
+    ) ?? BLOG_FILTER_ALL
+  );
+};
 
 export const filterBlogsByCategory = ({
   category,

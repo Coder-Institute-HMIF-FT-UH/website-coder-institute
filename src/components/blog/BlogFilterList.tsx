@@ -26,6 +26,29 @@ const BlogFilterList = () => {
     setActiveFilter(validatedFilter);
   }, [validatedFilter]);
 
+  useEffect(() => {
+    const currentFilter = searchParams.get('filter');
+    if (!currentFilter) {
+      return;
+    }
+
+    const normalizedFilter = currentFilter.toLowerCase();
+
+    if (currentFilter === normalizedFilter) {
+      return;
+    }
+
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('filter', normalizedFilter);
+
+    const query = params.toString();
+    const nextUrl = query ? `${pathname}?${query}` : pathname;
+
+    startTransition(() => {
+      router.replace(nextUrl, { scroll: false });
+    });
+  }, [pathname, router, searchParams, startTransition]);
+
   const handleSelectFilter = (option: string) => {
     if (option === activeFilter) {
       return;
@@ -35,11 +58,12 @@ const BlogFilterList = () => {
 
     startTransition(() => {
       const params = new URLSearchParams(searchParams.toString());
+      const normalizedOption = option.toLowerCase();
 
       if (option === BLOG_FILTER_ALL) {
         params.delete('filter');
       } else {
-        params.set('filter', option);
+        params.set('filter', normalizedOption);
       }
 
       const query = params.toString();

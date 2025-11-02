@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 const BlogSearchBar = () => {
   const router = useRouter();
@@ -10,19 +10,19 @@ const BlogSearchBar = () => {
   const searchParams = useSearchParams();
 
   const [keyword, setKeyword] = useState(
-    () => searchParams.get('search') ?? ''
+    () => searchParams.get('search')?.toLowerCase() ?? ''
   );
 
   useEffect(() => {
-    setKeyword(searchParams.get('search') ?? '');
+    setKeyword(searchParams.get('search')?.toLowerCase() ?? '');
   }, [searchParams]);
 
   const updateQuery = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    const trimmedKeyword = value.trim();
+    const normalizedKeyword = value.trim().toLowerCase();
 
-    if (trimmedKeyword) {
-      params.set('search', trimmedKeyword);
+    if (normalizedKeyword.length > 0) {
+      params.set('search', normalizedKeyword);
     } else {
       params.delete('search');
     }
@@ -34,13 +34,14 @@ const BlogSearchBar = () => {
   };
 
   const handleInputChange = (event: FormEvent<HTMLInputElement>) => {
-    setKeyword(event.currentTarget.value);
-    updateQuery(event.currentTarget.value);
+    const normalizedValue = event.currentTarget.value.toLowerCase();
+    setKeyword(normalizedValue);
+    updateQuery(normalizedValue);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    updateQuery(keyword);
+    updateQuery(keyword.toLowerCase());
   };
 
   return (

@@ -22,12 +22,17 @@ export const PrestasiFilterSection = () => {
 
   const validatedFilter = useMemo(() => {
     const requestedFilter = searchParams.get('filter');
-
-    if (requestedFilter && FILTER_OPTIONS.includes(requestedFilter)) {
-      return requestedFilter;
+    if (!requestedFilter) {
+      return FILTER_ALL;
     }
 
-    return FILTER_ALL;
+    const normalizedFilter = requestedFilter.toLowerCase();
+
+    return (
+      FILTER_OPTIONS.find(
+        option => option.toLowerCase() === normalizedFilter
+      ) ?? FILTER_ALL
+    );
   }, [searchParams]);
 
   const [active, setActive] = useState(validatedFilter);
@@ -46,6 +51,28 @@ export const PrestasiFilterSection = () => {
   useEffect(() => {
     setActive(validatedFilter);
   }, [validatedFilter]);
+
+  useEffect(() => {
+    const currentFilter = searchParams.get('filter');
+
+    if (!currentFilter) {
+      return;
+    }
+
+    const normalizedFilter = currentFilter.toLowerCase();
+
+    if (currentFilter === normalizedFilter) {
+      return;
+    }
+
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('filter', normalizedFilter);
+
+    const query = params.toString();
+    const nextUrl = query ? `${pathname}?${query}` : pathname;
+
+    router.replace(nextUrl, { scroll: false });
+  }, [pathname, router, searchParams]);
 
   useEffect(() => {
     if (!isDropdownOpen) return;
@@ -79,11 +106,12 @@ export const PrestasiFilterSection = () => {
     setIsDropdownOpen(false);
 
     const params = new URLSearchParams(searchParams.toString());
+    const normalizedItem = item.toLowerCase();
 
     if (item === FILTER_ALL) {
       params.delete('filter');
     } else {
-      params.set('filter', item);
+      params.set('filter', normalizedItem);
     }
 
     const query = params.toString();

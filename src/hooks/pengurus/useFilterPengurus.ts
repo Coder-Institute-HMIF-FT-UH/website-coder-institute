@@ -27,11 +27,31 @@ export function useFilterPengurus() {
     const filterFromUrl = searchParams.get('filter');
     const validFilters = getValidFilters();
 
-    if (filterFromUrl && validFilters.includes(filterFromUrl)) {
-      setActiveFilter(filterFromUrl);
-    } else if (filterFromUrl) {
-      // Jika filter tidak valid, reset ke 'Semua'
+    if (!filterFromUrl) {
       setActiveFilter(FILTER_ALL);
+      return;
+    }
+
+    const normalizedFilter = filterFromUrl.toLowerCase();
+
+    const matchedFilter =
+      validFilters.find(filter => filter.toLowerCase() === normalizedFilter) ??
+      FILTER_ALL;
+
+    setActiveFilter(matchedFilter);
+
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+
+      if (matchedFilter === FILTER_ALL) {
+        if (url.searchParams.has('filter')) {
+          url.searchParams.delete('filter');
+          window.history.replaceState({}, '', url.toString());
+        }
+      } else if (filterFromUrl !== normalizedFilter) {
+        url.searchParams.set('filter', normalizedFilter);
+        window.history.replaceState({}, '', url.toString());
+      }
     }
   }, [searchParams]);
 
@@ -52,7 +72,7 @@ export function useFilterPengurus() {
       url.searchParams.delete('filter');
     } else {
       // Set query parameter untuk filter yang dipilih
-      url.searchParams.set('filter', filter);
+      url.searchParams.set('filter', filter.toLowerCase());
     }
 
     // Update URL tanpa reload

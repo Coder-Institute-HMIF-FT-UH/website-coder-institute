@@ -35,6 +35,40 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  // Tutup navbar saat user scroll
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    // Tambahkan listener scroll dengan passive untuk performa optimal
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isOpen]);
+
+  // Tutup navbar saat tekan tombol Escape (accessibility)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscapeKey);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isOpen]);
+
   return (
     <nav
       ref={navRef}
@@ -66,7 +100,7 @@ const Navbar = () => {
           </Link>
 
           {/* Bagian Tengah: Menu (Desktop Only) */}
-          <div className="hidden items-center space-x-8 lg:flex">
+          <div className="hidden items-center space-x-12 lg:flex">
             {navLinks.map(link => {
               const isActive =
                 link.href === '/'
@@ -132,7 +166,7 @@ const Navbar = () => {
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="flex flex-col items-center space-y-4 px-6 pt-6 pb-4">
+        <div className="flex flex-col items-center space-y-6 px-6 pt-6 pb-4">
           {navLinks.map((link, index) => {
             const isActive =
               link.href === '/'
